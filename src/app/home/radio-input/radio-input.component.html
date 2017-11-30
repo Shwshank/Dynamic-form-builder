@@ -1,0 +1,7 @@
+{{ name}}
+
+<label *ngFor='let opt of option; let i=i' (change)='getVal(opt)'> <br>
+
+  <input type="radio" value={{opt}} name="radiogroup"  [checked]='opt == value'> {{opt}}
+
+</label>

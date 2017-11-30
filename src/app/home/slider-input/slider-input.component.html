@@ -1,0 +1,6 @@
+
+<form oninput="x.value=parseInt(a.value)">
+  {{min}}<input  type="range"  min={{min}} max={{max}} id="a" (change)='getVal()'>{{max}}
+
+  <output #val name="x" for="a ">{{value}}</output>
+</form>

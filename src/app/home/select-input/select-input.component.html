@@ -1,0 +1,6 @@
+{{name}}
+<select [(ngModel)]="selectedValue" (change)='getVal()'>
+
+  <option *ngFor='let opt of option; let i=i' [ngValue]=opt  [selected]="opt == value[0]">{{opt}}</option>
+
+</select>

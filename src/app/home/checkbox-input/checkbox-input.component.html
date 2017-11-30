@@ -1,0 +1,7 @@
+{{ name}}
+
+<label *ngFor='let opt of option; let i=i' > <br>
+
+  <input #flag type="checkbox" value={{opt}} name="checkbox" (change)='getVal(flag.checked,opt)' [checked]='checkVal(opt)'> {{opt}}
+
+</label>

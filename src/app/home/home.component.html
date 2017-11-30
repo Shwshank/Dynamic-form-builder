@@ -1,0 +1,48 @@
+<div *ngFor='let json of jsonArray, let i = i;' >
+
+  <div *ngIf="json.type=='text'" >
+    <app-text-feild     name={{json.name}} id={{json.id}} value={{json.value}} (jsonData)="jsonData($event)" ></app-text-feild>
+  </div>
+
+  <div *ngIf="json.type=='select'" >
+    <app-select-input   name={{json.name}} id={{json.id}} [option]=json.option [value]=json.value (jsonData)="jsonData($event)" ></app-select-input>
+  </div>
+
+  <div *ngIf="json.type=='radio'" >
+    <app-radio-input    name={{json.name}} id={{json.id}} [option]=json.option [value]=json.value (jsonData)="jsonData($event)" ></app-radio-input>
+  </div>
+
+  <div *ngIf="json.type=='checkbox'" >
+    <app-checkbox-input name={{json.name}} id={{json.id}} [option]=json.option [value]=json.value (jsonData)="jsonData($event)" ></app-checkbox-input>
+  </div>
+
+  <div *ngIf="json.type=='file-input'" >
+    <app-file-input name={{json.name}} id={{json.id}} accept={{json.accept}} fileName={{json.fileName}} (jsonData)="jsonData($event)" ></app-file-input>
+  </div>
+
+  <div *ngIf="json.type=='current-location'" >
+    <app-location-input name={{json.name}} id={{json.id}} (jsonData)="jsonData($event)" ></app-location-input>
+  </div>
+
+  <div *ngIf="json.type=='slider'" >
+    <app-slider-input name={{json.name}} id={{json.id}} value={{json.value}} min={{json.min}} max={{json.max}} (jsonData)="jsonData($event)" ></app-slider-input>
+  </div>
+
+</div>
+
+<div *ngFor='let data of act_data'>
+  <p>  'id' = {{data.id}}, 'name'={{data.name}}, 'option'={{data.option}}, 'value'={{data.value}}   </p>
+</div>
+
+
+<!-- <ng-template myNgIf >
+home works!
+</ng-template> -->
+
+<!-- <p *ngIf='value' >
+  home works!
+</p> -->
+<!-- <p *myNgIf > home works! </p> -->
+<!-- <ng-template [ngIf]='value'>
+  <p> home works! </p>
+</ng-template> -->
